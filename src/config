@@ -13,23 +13,23 @@ keys="MONGODB_PORT MONGODB_BIND_IP MAIL_URL MAIL_FROM ROOT_URL PORT"
 # default values
 DESCRIPTION_MONGODB_PORT="mongodb binding port"
 DEFAULT_MONGODB_PORT="27019"
-KEY_MONGODB_PORT='mongodb_port'
+KEY_MONGODB_PORT='mongodb-port'
 
 DESCRIPTION_MONGODB_BIND_IP="mongodb binding address"
 DEFAULT_MONGODB_BIND_IP="127.0.0.1"
-KEY_MONGODB_BIND_IP="mongodb_bind_ip"
+KEY_MONGODB_BIND_IP="mongodb-bind-ip"
 
 DESCRIPTION_MAIL_URL="wekan mail binding"
 DEFAULT_MAIL_URL="smtp://user:pass@mailserver.examples.com:25/"
-KEY_MAIL_URL="mail_url"
+KEY_MAIL_URL="mail-url"
 
 DESCRIPTION_MAIL_FROM="wekan's admin mail from name email address"
 DEFAULT_MAIL_FROM="wekan-admin@example.com"
-KEY_MAIL_FROM="mail_from"
+KEY_MAIL_FROM="mail-from"
 
 DESCRIPTION_ROOT_URL="wekan's root url, eg http://127.0.0.1, https://example.com, https://wekan.example.com, http://example.com/wekan"
 DEFAULT_ROOT_URL="http://127.0.0.1"
-KEY_ROOT_URL="root_url"
+KEY_ROOT_URL="root-url"
 
 DESCRIPTION_PORT="port wekan is exposed at"
 DEFAULT_PORT="8080"
