@@ -24,7 +24,7 @@ source $SNAP/bin/config
 # loop through all values, and if not defined, use default value
 for key in ${keys[@]}
 do
-  if [ -z "${!key}" ]; then
+  if [ "x" ==  "x${!key}" ]; then
       # use default value
       default_value="DEFAULT_$key"
       echo "using default value: $key='${!default_value}'"

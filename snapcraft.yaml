@@ -5,16 +5,9 @@ description: |
    Wekan is an open-source and collaborative kanban board application.
 
    Whether you’re maintaining a personal todo list, planning your holidays with some friends, or working in a team on your next revolutionary idea, Kanban boards are an unbeatable tool to keep your things organized. They give you a visual overview of the current state of your project, and make you productive by allowing you to focus on the few items that matter the most.
-   depending on your environment, you might need to alter some configuration settings
-   use: $ snap set wekan <key>="<key value>"
-    eg $ snap set wekan PORT='8080'
-   supported keys:
-     - MONGO_PORT: mongodb binding port, default value is '2017'
-     - MONGO_BIND_IP: mondodb binding IP address, default value is '"127.0.0.1'
-     - PORT: port wekan is exposed on, default value is'8080'
-     - ROOT_URL: wekan root url where wekan can be accessed, default value is 'http://127.0.0.1'
-     - MAIL_URL: wekan's binding to mail server, there is no default value, example value 'smtp://user:pass@mailserver.examples.com:25/'
-     - MAIL_FROM: wekan's admin email address, no default value, example value 'wekan-admin@example.com'
+   Depending on target environment, some configuration settings might need to be adjusted.
+   For full list of configuration options call:
+   $ wekan-ondra.help
 
 confinement: strict
 grade: stable

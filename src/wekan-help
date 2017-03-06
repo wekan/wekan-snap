@@ -14,7 +14,11 @@ do
     description="DESCRIPTION_$key"
     snappy_key="KEY_$key"
     echo -e "\t${!snappy_key}:   ${!description}"
-    echo -e "\t\tdefault value: '${!default_value}', current value: '${!key}'"
+    if [ "x" == "x${!key}" ]; then
+        echo -e "\t\tNo value set, using default value: '${!default_value}'"
+    else
+        echo -e "\t\tCurrent value set to: '${!key}', (default value: '${!default_value}')"
+    fi
 done
 echo -e "\nFor changes to take effect restart wekan service,"
 echo -e "if mongodb key was change also restart mongodb service, before restaring wekan"
