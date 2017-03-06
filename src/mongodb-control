@@ -11,4 +11,4 @@ fi
 export LC_ALL=C
 
 # start mongo deamon
-mongod --dbpath $SNAP_COMMON --logpath $SNAP_COMMON/mongodb.log --logappend --bind_ip $MONGODB_BIND_IP --port $MONGODB_PORT --journal
+mongod --dbpath $SNAP_COMMON --logpath $SNAP_COMMON/mongodb.log --logappend --bind_ip $MONGODB_BIND_IP --port $MONGODB_PORT --journal --unixSocketPrefix $SNAP_DATA

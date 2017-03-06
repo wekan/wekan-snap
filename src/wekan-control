@@ -9,7 +9,16 @@ start_node() {
     source $SNAP/bin/wekan-read-settings
 
     export NODE_PATH=$SNAP/bin
-    export MONGO_URL="mongodb://$MONGODB_BIND_IP:$MONGODB_PORT/wekan"
+    if [ "x" == "x$MONGODB_BIND_IP" ]; then
+        export MONGO_URL="mongodb://$SNAP_DATA/mongodb-27017.sock"
+        echo "Mongo bind ip not defined, using default Unix socket: $MONGO_URL"
+    else
+        if [ "x" == "x$MONGODB_PORT" ]; then
+            export MONGO_URL="mongodb://$MONGODB_BIND_IP/wekan"
+        else
+            export MONGO_URL="mongodb://$MONGODB_BIND_IP:$MONGODB_PORT/wekan"
+        fi
+    fi
 
     APPLICATION_DIRECTORY=$SNAP
     APPLICATION_START=main.js
