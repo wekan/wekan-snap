@@ -1,5 +1,5 @@
 name: wekan-ondra
-version: "0.11.1-rc1"
+version: "0.11.1-rc2"
 summary: The open-source Trello-like kanban
 description: |
    Wekan is an open-source and collaborative kanban board application.
@@ -58,7 +58,7 @@ parts:
             - $mongo
 
     wekan:
-        source: https://github.com/wekan/wekan/releases/download/v0.11.1-rc1/wekan-0.11.1-rc1.tar.gz
+        source: https://github.com/wekan/wekan/releases/download/v0.11.1-rc2/wekan-0.11.1-rc2.tar.gz
         source-subdir: programs/server
         plugin: nodejs
         node-packages: [npm]
