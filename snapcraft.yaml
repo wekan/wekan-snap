@@ -72,7 +72,7 @@ parts:
             README: README.wekan
 
     helpers:
-        source: snap/src
+        source: snap
         plugin: dump
         organize:
             wekan-control: bin/wekan-control
