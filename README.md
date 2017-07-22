@@ -5,6 +5,10 @@
   - mongodb
   - wekan server implementation
 
+## Screenshot
+
+![Screenshot of Wekan][screenshot]
+
 ## Install
 
 This wekan snap is available in the Ubuntu store for release series 16 (e.g. Ubuntu 16.04). Search for wekan
@@ -39,3 +43,5 @@ $ wekan.help
 [Wekan snap package issues](https://github.com/wekan/wekan-snap/issues)
 
 [Wekan issues](https://github.com/wekan/wekan/issues)
+
+[screenshot]: https://wekan.github.io/screenshot.png
