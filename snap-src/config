@@ -11,9 +11,9 @@ SETTINGS_FILE="$SNAP_COMMON/wekan_settings.sh"
 keys="MONGODB_BIND_UNIX_SOCKET MONGODB_BIND_IP MONGODB_PORT MAIL_URL MAIL_FROM ROOT_URL PORT DISABLE_MONGODB"
 
 # default values
-DESCRIPTION_MONGODB_BIND_UNIX_SOCKET="mongodb binding unix socket:\n"\
-"\t\t\t Default behaviour will preffer binding over unix socket, to disable unix socket binding set value to 'nill' string\n"\
-"\t\t\t To bind to instance of mongo provided through contect interface set to relative path to the socket inside shared directory"
+DESCRIPTION_MONGODB_BIND_UNIX_SOCKET="the unix domain socket of mongodb\n"\
+"\t\t\t Default behaviour will prefer binding over unix domain socket, to disable unix domain socket binding set the value to 'nill'\n"\
+"\t\t\t To bind to the instance of mongodb provided through the snap context, set a relative path to the socket inside shared directory"
 DEFAULT_MONGODB_BIND_UNIX_SOCKET="$SNAP_DATA/share"
 KEY_MONGODB_BIND_UNIX_SOCKET="mongodb-bind-unix-socket"
 
