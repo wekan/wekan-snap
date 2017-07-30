@@ -15,24 +15,24 @@ This wekan snap is available in the Ubuntu store for release series 16 (e.g. Ubu
 
  * Install snap package
    ```
-   $ sudo snap install wekan
+   sudo snap install wekan
    ```
  * Review help
    ```
-   $ snap run wekan.help
+   snap run wekan.help
    ```
  * Configure snap package
    ```
-   $ snap set wekan mail-url=smtp://127.0.0.1:25
+   snap set wekan mail-url=smtp://127.0.0.1:25
    ...
    ```
  * Restart and check wekan
    ```
-   $ systemctl restart snap.wekan.mongodb
-   $ systemctl restart snap.wekan.wekan
+   systemctl restart snap.wekan.mongodb
+   systemctl restart snap.wekan.wekan
 
-   $ systemctl status snap.wekan.mongodb
-   $ systemctl status snap.wekan.wekan
+   systemctl status snap.wekan.mongodb
+   systemctl status snap.wekan.wekan
    ```
 
 ## Resources and facts:
