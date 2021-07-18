@@ -1,6 +1,6 @@
-name: wekan
-version: "0.65"
-summary: The open-source Trello-like kanban
+name: wekan-snap
+version: '5.38'
+summary: The open-source kanban
 description: |
    Wekan is an open-source and collaborative kanban board application.
 
@@ -25,6 +25,12 @@ slots:
     interface: content
     write:
       - $SNAP_DATA/share
+
+hooks:
+  configure:
+    plugs:
+      - network
+      - network-bind
 
 apps:
     wekan:
@@ -53,7 +59,7 @@ apps:
 
 parts:
     mongodb:
-        source: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-3.2.18.tgz
+        source: https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1604-3.2.22.tgz
         plugin: dump
         stage-packages: [libssl1.0.0]
         filesets:
@@ -67,11 +73,11 @@ parts:
             - $mongo
 
     wekan:
-        source: https://github.com/wekan/wekan-releases/blob/master/0.65/wekan-0.65.tar.gz?raw=true
+        source: https://releases.wekan.team/wekan-5.38.zip
         source-subdir: programs/server
         plugin: nodejs
-        node-packages: [npm@5.5.1]
-        node-engine: 8.9.3
+        node-packages: [npm]
+        node-engine: 12.22.3
         build-packages:
             - python
         install: |
@@ -91,3 +97,27 @@ parts:
             mongodb-backup: bin/mongodb-backup
             mongodb-restore: bin/mongodb-restore
             config: bin/config
+
+    helpers:
+        source: snap-src
+        plugin: dump
+
+    caddy:
+        plugin: dump
+        ## Caddy v1 is not developed anymore. TODO: Sometime migrate to Caddy v2.
+        ## https://caddy.community/t/caddyfile-v1-adapter/9129
+        ## https://github.com/caddyserver/caddy/tree/v1
+        #source: https://caddyserver.com/download/linux/amd64?license=personal&telemetry=off
+        #source-type: tar
+        # Using last working binary that was downloaded from above URL to Wekan Snap,
+        # and .txt files from https://github.com/caddyserver/caddy/tree/v1/dist
+        source: https://releases.wekan.team/caddy/caddy-v1-linux-amd64.7z
+        source-type: 7z
+        organize:
+          caddy: bin/caddy
+          CHANGES.txt: CADDY_CHANGES.txt
+          EULA.txt: CADDY_EULA.txt
+          LICENSES.txt: CADDY_LICENSES.txt
+          README.txt: CADDY_README.txt
+        stage:
+          - -init
